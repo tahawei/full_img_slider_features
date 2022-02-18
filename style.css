@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.carousel {
+  align-items: center;
+  display: flex;
+  margin: 2rem auto;
+  overflow: hidden;
+  position: relative;
+  width: 800px;
+  height: fit-content;
+}
+.carousel__images {
+  display: flex;
+  transform: translateX(0);
+  transition: transform 0.5s;
+}
+.carousel__images img {
+  border-radius: 5px;
+  width: 800px;
+}
+
+.carousel__button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  height: 2rem;
+  opacity: 0.5;
+  position: absolute;
+  transition: opacity 0.25s;
+  width: 2rem;
+  z-index: 1;
+  transform-origin: center;
+  transform: translateY(-50%);
+}
+.carousel__button img {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  height: 2rem;
+  opacity: 0.5;
+  position: absolute;
+  transition: opacity 0.25s;
+  width: 2rem;
+  z-index: 1;
+  transform-origin: center;
+  transform: translateX(-50%);
+}
+
+.carousel__button.previous {
+  left: 5px;
+}
+.carousel__button.next {
+  right: 5px;
+}
+
+.carousel__button:hover,
+.carousel__button img:hover {
+  opacity: 1;
+}
+.carousel__button.disabled {
+  opacity: 0;
+  cursor: none;
+}
+/* Add bullets */
+.bullets-container {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  margin-bottom: 15px;
+}
+.bullets-container ul {
+  gap: 10px;
+  display: flex;
+}
+.bullets-container li {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+  list-style: none;
+}
+.bullets-container li.active {
+  background: #fff;
+}
+.bullets-container li.active:hover {
+  transform: scale(1);
+}
+.bullets-container li:hover {
+  transform: scale(1.1);
+}
